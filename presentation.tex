@@ -1,0 +1,188 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{beamerthemetree}
+\usepackage[backend=biber]{biblatex}
+
+\usepackage{tabularx}
+\usetheme{Boadilla}
+\usecolortheme{whale}
+
+\usepackage{graphicx}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{hyperref}
+
+\usepackage{verbatim}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{geometry}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{anyfontsize}
+\usepackage{rotating}
+\usepackage{epstopdf}
+\usepackage{animate}
+
+\usepackage{enumitem}
+\usepackage[11pt]{moresize}
+
+
+\usepackage{color}
+% \definecolor{nasa_blue}{rgb}{0.14117,0.36863,0.66666}
+\definecolor{nasa_blue}{RGB}{9, 80, 163}
+\definecolor{om_blue}{RGB}{28, 0, 148}
+\definecolor{openmdao_red}{rgb}{0.545,0.0,0.0}
+\definecolor{forestgreen}{rgb}{0.18,0.52,0.18}
+\definecolor{thermo_color}{HTML}{D4BF00}
+\definecolor{eng_color}{HTML}{6000ED}
+\definecolor{s4_red}{RGB}{251,0,6}
+\definecolor{s3_purple}{RGB}{117,62,194}
+\definecolor{s2_green}{RGB}{57,158,2}
+\definecolor{light_red}{RGB}{255, 102, 102}
+
+%\definecolor{alt_background}{rgb}{.506,.224,.725} %purple
+%\definecolor{alt_background}{rgb}{.141,.165,.196} %dark blue/gray
+\definecolor{alt_background}{rgb}{.376,.396,.427} %light blue/gray
+
+\usepackage{colortbl}
+
+\setbeamercolor{frametitle}{bg=nasa_blue, fg=white}%
+\setbeamercolor{title in head/foot}{bg=nasa_blue}%
+\setbeamercolor{author in head/foot}{bg=alt_background}%
+\setbeamercolor{title}{bg=nasa_blue}%
+\setbeamercolor*{item}{fg=nasa_blue}
+
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertsectionhead\hspace*{1em}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+    \insertframenumber{}
+    % / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatletter
+
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\tocframe}[1]{{%
+\setbeamercolor{frametitle}{bg=alt_background, fg=white}%
+\setbeamercolor{author in head/foot}{fg=black,bg=alt_background}%
+\setbeamercolor{title in head/foot}{fg=white,bg=alt_background}%
+\setbeamercolor{section in toc}{fg=black}%
+\setbeamercolor{section number projected}{bg=nasa_blue,fg=white}%
+\setbeamertemplate{footline}{%
+\leavevmode%
+\hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+  \end{beamercolorbox}}\vskip0pt%
+}%
+\begin{frame}%
+\frametitle{Outline}%
+#1
+\end{frame}}%
+}
+
+\mathchardef\mhyphen="2D
+
+
+\addbibresource{biblio.bib}
+
+\renewcommand{\footnotesize}{\tiny}
+
+
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+
+\newsavebox\MBox
+\newcommand\Cline[2][red]{{\sbox\MBox{$#2$}%
+  \rlap{\usebox\MBox}\color{#1}\rule[-1.8\dp\MBox]{\wd\MBox}{1pt}}}
+
+
+\setcounter{tocdepth}{1}
+
+
+\newcommand{\cent}{{\mathrm{c}\mkern-6.5mu{\mid}}}
+
+
+%\setbeamercolor*{section in toc}{fg=openmdao_red}
+%\setbeamercolor*{palette secondary}{fg=white,bg=openmdao_red}
+
+\newcommand{\tablesize}{\fontsize{7.3}{7.8}\selectfont}
+
+\newcommand{\txt}{\textrm}
+
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tderiv}[2]{\frac{d #1}{d #2}}
+
+
+\title[This is my presentation]{This is my presentation. There are many like it, but this one is mine.}
+
+\author{
+  Buzz Lightyear
+}
+\date{The Future!!!}
+
+\begin{document}
+
+{\setbeamertemplate{footline}{}
+  \frame{
+
+    \vspace{4em}
+    \maketitle
+
+    \begin{textblock}{3.5}(11.75,0.0)
+      \includegraphics[width=\textwidth]{images/NASA_logo.pdf}
+    \end{textblock}
+
+    \begin{textblock}{10}(0.1,15.3)
+      www.nasa.gov
+    \end{textblock}
+
+  }
+}
+
+\frame{
+  \frametitle{Alternate titles I considered:}
+    \begin{itemize}[leftmargin=3em, itemsep=2em] \LARGE
+      \item My optimization method is the best! \\Why won't you use it?
+      \item What do you mean you don't want \\a 1000x speedup??
+      \item You need to prove this works \\for an industry relevant problem.
+    \end{itemize}
+}
+
+\begin{frame}
+  \frametitle{Hello}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      foo 
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      bar
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\frame[plain,c]{
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    {\LARGE Foobar}
+  \end{beamercolorbox}
+
+  \vfill
+} 
+
+
+\end{document}
